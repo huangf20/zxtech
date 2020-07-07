@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/primary_text_dark">
+
+        <TextView
+            android:id="@+id/text_tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="_ACTION_"
+            android:textColor="#161515"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/text_detial_one"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="zhaoxitech://com.zhaoxitech.cbook/" />
+
+        <Button
+            android:id="@+id/bt_go"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="GO" />
+
+        <Button
+            android:id="@+id/bt_update"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="50dp"
+            android:text="UpDate"
+            ></Button>
+
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

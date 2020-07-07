@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@android:color/primary_text_dark">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/tv_tittle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是否显示ActionBar"
+            android:textColor="#1F1C1C"
+            android:textSize="18sp" />
+
+        <Switch
+            android:id="@+id/item_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right" />
+
+        <TextView
+            android:id="@+id/tv_content3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
+    </FrameLayout>
+
+</LinearLayout>

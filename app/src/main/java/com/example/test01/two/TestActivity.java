@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.test01.R;
-import com.example.test01.two.Data.stringItemData;
-import com.example.test01.two.Data.intItemData;
-import com.example.test01.two.Data.booleanItemData;
+import com.example.test01.two.Data.StringItemData;
+import com.example.test01.two.Data.IntItemData;
+import com.example.test01.two.Data.BooleanItemData;
 import com.example.test01.two.adapter.SimpleAdapter;
 import com.example.test01.two.bean.ItemBean;
 import com.example.test01.two.bean.TabItem;
@@ -69,63 +69,63 @@ public class TestActivity extends AppCompatActivity implements SimpleAdapter.OnI
         List<ItemBean> searchItems=new ArrayList<>();
         List<ItemBean> catalogItems=new ArrayList<>();
 
-        readerItems.add(new intItemData("书籍ID", "bookId", "321"));
-        readerItems.add(new stringItemData("章节ID", "chapterId", "1"));
-        readerItems.add(new stringItemData("跳转来源(例如:推送: push)", "source", "test"));
+        readerItems.add(new IntItemData("书籍ID", "bookId", "321"));
+        readerItems.add(new StringItemData("章节ID", "chapterId", "1"));
+        readerItems.add(new StringItemData("跳转来源(例如:推送: push)", "source", "test"));
         mTabItems.add(new TabItem("阅读器", "reader", readerItems));
 
-        bookstoreitems.add(new stringItemData("页面id", "id", "1"));
-        bookstoreitems.add(new stringItemData("频道", "channel", "boy"));
-        bookstoreitems.add(new stringItemData("跳转来源(例如:推送: push)", "source", "test"));
+        bookstoreitems.add(new StringItemData("页面id", "id", "1"));
+        bookstoreitems.add(new StringItemData("频道", "channel", "boy"));
+        bookstoreitems.add(new StringItemData("跳转来源(例如:推送: push)", "source", "test"));
         mTabItems.add(new TabItem("书库", "bookstore", bookstoreitems));
 
-        catalogItems.add(new stringItemData("书籍ID","bookId","321"));
-        catalogItems.add(new stringItemData("书籍名称","bookName","物理魔法师"));
-        catalogItems.add(new stringItemData("高亮的章节ID","chapterId","1"));
-        catalogItems.add(new stringItemData("跳转来源(例如:推送: push)", "source", "test"));
+        catalogItems.add(new StringItemData("书籍ID","bookId","321"));
+        catalogItems.add(new StringItemData("书籍名称","bookName","物理魔法师"));
+        catalogItems.add(new StringItemData("高亮的章节ID","chapterId","1"));
+        catalogItems.add(new StringItemData("跳转来源(例如:推送: push)", "source", "test"));
         mTabItems.add(new TabItem("目录", "catalog", catalogItems));
 
-        h5Items.add(new stringItemData("url链接", "url", "www.baidu.com"));
-        h5Items.add(new stringItemData("标题", "title", "tittle"));
-        h5Items.add(new booleanItemData("是否允许下拉刷新", "enableRefresh", "true"));
+        h5Items.add(new StringItemData("url链接", "url", "www.baidu.com"));
+        h5Items.add(new StringItemData("标题", "title", "tittle"));
+        h5Items.add(new BooleanItemData("是否允许下拉刷新", "enableRefresh", "true"));
         mTabItems.add(new TabItem("H5", "website", h5Items));
 
         mTabItems.add(new TabItem("福利", "welfare", welfareItems));
 
-        booklistItems.add(new stringItemData("书单ID", "id", "54"));
-        booklistItems.add(new stringItemData("书单名字", "title", "女生精选"));
-        booklistItems.add(new stringItemData("跳转来源(例如:推送: push)", "source", "test"));
+        booklistItems.add(new StringItemData("书单ID", "id", "54"));
+        booklistItems.add(new StringItemData("书单名字", "title", "女生精选"));
+        booklistItems.add(new StringItemData("跳转来源(例如:推送: push)", "source", "test"));
         mTabItems.add(new TabItem("书单详情", "booklist", booklistItems));
 
-        conditionqueryItems.add(new stringItemData("对应的categotyId", "categoryId", "123"));
-        conditionqueryItems.add(new stringItemData("title", "title", "精选"));
-        conditionqueryItems.add(new stringItemData("跳转来源(例如:推送: push)", "source", "test"));
+        conditionqueryItems.add(new StringItemData("对应的categotyId", "categoryId", "123"));
+        conditionqueryItems.add(new StringItemData("title", "title", "精选"));
+        conditionqueryItems.add(new StringItemData("跳转来源(例如:推送: push)", "source", "test"));
         mTabItems.add(new TabItem("筛选", "condition_query", conditionqueryItems));
 
-        ranklistItems.add(new stringItemData("频道","channel","boy"));
-        ranklistItems.add(new stringItemData("排行id","id","1"));
-        ranklistItems.add(new stringItemData("跳转来源(例如:推送: push)", "source", "test"));
+        ranklistItems.add(new StringItemData("频道","channel","boy"));
+        ranklistItems.add(new StringItemData("排行id","id","1"));
+        ranklistItems.add(new StringItemData("跳转来源(例如:推送: push)", "source", "test"));
         mTabItems.add(new TabItem("排行","ranklist",ranklistItems));
 
-        usercenterItems.add(new stringItemData("跳转来源(例如:推送: push)", "source", "test"));
+        usercenterItems.add(new StringItemData("跳转来源(例如:推送: push)", "source", "test"));
         mTabItems.add(new TabItem("我的 ","usercenter",usercenterItems));
 
-        searchItems.add(new stringItemData("跳转来源(例如:推送: push)", "source", "test"));
+        searchItems.add(new StringItemData("跳转来源(例如:推送: push)", "source", "test"));
         mTabItems.add(new TabItem("搜索","search",searchItems));
 
 
-        listpageItems.add(new stringItemData("默认展示的pageId", "pageId", "1"));
-        listpageItems.add(new stringItemData("页面类型", "pageType", "free_page"));
-        listpageItems.add(new stringItemData("跳转来源(例如:推送: push)", "source", "test"));
-        listpageItems.add(new stringItemData("展示样式", "showType", "0"));
+        listpageItems.add(new StringItemData("默认展示的pageId", "pageId", "1"));
+        listpageItems.add(new StringItemData("页面类型", "pageType", "free_page"));
+        listpageItems.add(new StringItemData("跳转来源(例如:推送: push)", "source", "test"));
+        listpageItems.add(new StringItemData("展示样式", "showType", "0"));
         mTabItems.add(new TabItem("列表页面", "list_page", listpageItems));
 
-        pagepayItems.add(new stringItemData("付款金额", "payAmount", "10000"));
-        pagepayItems.add(new stringItemData("购买的书币数量", "credits", "100"));
-        pagepayItems.add(new stringItemData("赠送的书币数量", "creditsGift", "10"));
-        pagepayItems.add(new stringItemData("充值类型id", "packageId", "1"));
-        pagepayItems.add(new stringItemData("充值计划id", "rechargePlanId", "1"));
-        pagepayItems.add(new stringItemData("跳转来源(例如:推送: push)", "source", "test"));
+        pagepayItems.add(new StringItemData("付款金额", "payAmount", "10000"));
+        pagepayItems.add(new StringItemData("购买的书币数量", "credits", "100"));
+        pagepayItems.add(new StringItemData("赠送的书币数量", "creditsGift", "10"));
+        pagepayItems.add(new StringItemData("充值类型id", "packageId", "1"));
+        pagepayItems.add(new StringItemData("充值计划id", "rechargePlanId", "1"));
+        pagepayItems.add(new StringItemData("跳转来源(例如:推送: push)", "source", "test"));
         mTabItems.add(new TabItem("充值页面", "page_pay", pagepayItems));
 
         mFragmentManager = getSupportFragmentManager();

@@ -10,9 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.test01.R;
-import com.example.test01.two.Data.stringItemData;
-import com.example.test01.two.Data.intItemData;
-import com.example.test01.two.Data.booleanItemData;
+import com.example.test01.two.Data.StringItemData;
+import com.example.test01.two.Data.IntItemData;
+import com.example.test01.two.Data.BooleanItemData;
 import com.example.test01.two.adapter.holder.AbsViewHolder;
 import com.example.test01.two.adapter.holder.stringViewHolder;
 import com.example.test01.two.adapter.holder.intViewHolder;
@@ -61,9 +61,9 @@ public class MultiItemsAdapter extends RecyclerView.Adapter<AbsViewHolder> {
 
 
     {
-        registerItem(stringItemData.class, stringViewHolder.class, R.layout.recycle_item_string);
-        registerItem(intItemData.class, intViewHolder.class, R.layout.recycle_item_int);
-        registerItem(booleanItemData.class, booleanViewHolder.class, R.layout.recycle_itemboolean);
+        registerItem(StringItemData.class, stringViewHolder.class, R.layout.recycle_item_string);
+        registerItem(IntItemData.class, intViewHolder.class, R.layout.recycle_item_int);
+        registerItem(BooleanItemData.class, booleanViewHolder.class, R.layout.recycle_itemboolean);
     }
 
     private void registerItem(Class<? extends ItemBean> dataClass, Class<? extends AbsViewHolder> holderClass, int layoutId) {

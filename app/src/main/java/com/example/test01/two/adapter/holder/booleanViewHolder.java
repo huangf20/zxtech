@@ -6,10 +6,10 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.test01.R;
-import com.example.test01.two.Data.booleanItemData;
+import com.example.test01.two.Data.BooleanItemData;
 import com.example.test01.two.adapter.MultiItemsAdapter;
 
-public class booleanViewHolder extends AbsViewHolder<booleanItemData> {
+public class booleanViewHolder extends AbsViewHolder<BooleanItemData> {
 
     private MultiItemsAdapter.OnItemClickListener mOnItemClickListener;
     TextView mTvTittle, mTvContent;
@@ -26,7 +26,7 @@ public class booleanViewHolder extends AbsViewHolder<booleanItemData> {
     }
 
     @Override
-    public void bindData(booleanItemData data, final int position) {
+    public void bindData(BooleanItemData data, final int position) {
         mTvTittle.setText(data.getTittle().toString());
         mTvContent.setHint(data.getContent().toString());
         if(data.getContent().toString().equals("true"))

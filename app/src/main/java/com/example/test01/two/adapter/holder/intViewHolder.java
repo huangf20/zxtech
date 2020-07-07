@@ -7,10 +7,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.test01.R;
-import com.example.test01.two.Data.intItemData;
+import com.example.test01.two.Data.IntItemData;
 import com.example.test01.two.adapter.MultiItemsAdapter;
 
-public class intViewHolder extends AbsViewHolder<intItemData> {
+public class intViewHolder extends AbsViewHolder<IntItemData> {
 
     private MultiItemsAdapter.OnItemClickListener mOnItemClickListener;
     TextView mTvTittle;
@@ -24,7 +24,7 @@ public class intViewHolder extends AbsViewHolder<intItemData> {
     }
 
     @Override
-    public void bindData(intItemData data, final int position) {
+    public void bindData(IntItemData data, final int position) {
         mTvTittle.setText(data.getTittle().toString());
         mTvContent.setHint(data.getContent().toString());
         mTvContent.addTextChangedListener(new TextWatcher() {

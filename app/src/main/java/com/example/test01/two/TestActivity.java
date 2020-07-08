@@ -1,6 +1,9 @@
 package com.example.test01.two;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -13,6 +16,7 @@ import com.example.test01.R;
 import com.example.test01.two.Data.StringItemData;
 import com.example.test01.two.Data.IntItemData;
 import com.example.test01.two.Data.BooleanItemData;
+import com.example.test01.two.Path.Path;
 import com.example.test01.two.adapter.SimpleAdapter;
 import com.example.test01.two.bean.ItemBean;
 import com.example.test01.two.bean.TabItem;
@@ -32,13 +36,47 @@ public class TestActivity extends AppCompatActivity implements SimpleAdapter.OnI
     private List<TabItem> mTabItems = new ArrayList<>();
     private RecyclerView mSimpleRecyclerView;
 
+    Button mButtonZG,mButtonMeizu,mButtonHuawei;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initData();
         initView();
+        btOnclick();
+        firstPage();
+    }
 
+    private void btOnclick() {
+        mButtonZG.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Path.setZhuigeng();
+                mFragmentMap.clear();
+                firstPage();
+            }
+        });
+        mButtonMeizu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Path.setMeizu();
+                mFragmentMap.clear();
+                firstPage();
+            }
+        });
+        mButtonHuawei.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Path.setHuawei();
+                mFragmentMap.clear();
+                firstPage();
+            }
+        });
+    }
+
+    private void firstPage()
+    {
         TabItem tabItem = mTabItems.get(0);
         ShowFragment showFragment = new ShowFragment(tabItem.getTitle(), tabItem.getPath(), tabItem.getConfigs());
         replaceFragment(showFragment, false);
@@ -53,6 +91,10 @@ public class TestActivity extends AppCompatActivity implements SimpleAdapter.OnI
         mSimpleRecyclerView.setLayoutManager(layoutManager);
         mSimpleRecyclerView.setHasFixedSize(true);
         mSimpleRecyclerView.setAdapter(simpleAdapter);
+        mButtonZG=findViewById(R.id.zhuigeng);
+        mButtonMeizu=findViewById(R.id.meizu);
+        mButtonHuawei=findViewById(R.id.huawei);
+
     }
 
     private void initData() {
@@ -79,7 +121,7 @@ public class TestActivity extends AppCompatActivity implements SimpleAdapter.OnI
         bookstoreitems.add(new StringItemData("跳转来源(例如:推送: push)", "source", "test"));
         mTabItems.add(new TabItem("书库", "bookstore", bookstoreitems));
 
-        catalogItems.add(new StringItemData("书籍ID","bookId","321"));
+        catalogItems.add(new IntItemData("书籍ID","bookId","321"));
         catalogItems.add(new StringItemData("书籍名称","bookName","物理魔法师"));
         catalogItems.add(new StringItemData("高亮的章节ID","chapterId","1"));
         catalogItems.add(new StringItemData("跳转来源(例如:推送: push)", "source", "test"));

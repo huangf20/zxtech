@@ -30,9 +30,8 @@ public class MultiItemsAdapter extends RecyclerView.Adapter<AbsViewHolder> {
     private static final String TAG = MultiItemsAdapter.class.getSimpleName();
     private OnItemClickListener mOnItemClickListener;
 
-    public OnItemClickListener getOnItemClickListener() {
-        return mOnItemClickListener;
-    }
+
+
 
     private Context mContext;
 
@@ -123,5 +122,14 @@ public class MultiItemsAdapter extends RecyclerView.Adapter<AbsViewHolder> {
 
     public interface OnItemClickListener {
         void onTextChange(String text, int position);
+    }
+
+    public OnItemClickListener getOnItemClickListener() {
+        return mOnItemClickListener;
+    }
+
+    public Context getContext()
+    {
+        return mContext;
     }
 }

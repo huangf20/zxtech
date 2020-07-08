@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:orientation="vertical"
+    android:layout_height="80dp"
     android:layout_margin="8dp"
-    android:background="@android:color/primary_text_dark">
+    android:background="@android:color/primary_text_dark"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,10 +16,10 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:textColor="#1E1B1B"
-            android:textSize="18sp"
             android:text="bookId"
-            />
+            android:textColor="#1E1B1B"
+            android:textSize="18sp" />
+
         <EditText
             android:id="@+id/tv_content2"
             android:layout_width="wrap_content"
@@ -34,21 +34,4 @@
 
 
     </LinearLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <ListView
-                android:id="@+id/listView"
-                android:layout_width="match_parent"
-                android:layout_height="200dp">
-
-            </ListView>
-        </LinearLayout>
-    </ScrollView>
 </LinearLayout>

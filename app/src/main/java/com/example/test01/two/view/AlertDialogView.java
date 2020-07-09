@@ -117,6 +117,8 @@ public class AlertDialogView extends FrameLayout {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 TextView textView=view.findViewById(android.R.id.text1);
                 mSearchEt.setText(textView.getText());
+                mSearchEt.requestFocus();
+                mSearchEt.setSelection(mSearchEt.getText().length());
             }
         });
 

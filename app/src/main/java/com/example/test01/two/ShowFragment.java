@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,7 +32,7 @@ public class ShowFragment extends Fragment implements MultiItemsAdapter.OnItemCl
     private View mView;
     private TextView mTvContent, mTvTittle;
     private RecyclerView mRecyclerView;
-    private Button btGo, btUpte;
+    private Button btGo, btShare;
     private List<ItemBean> mItemBeanList = new ArrayList<>();
 
     private List<String> mValueList = new ArrayList<>();
@@ -59,11 +60,15 @@ public class ShowFragment extends Fragment implements MultiItemsAdapter.OnItemCl
         initDate();
         initView();
 
-        btUpte.setOnClickListener(new View.OnClickListener() {
+        btShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                setContentTv();
+                Intent intent =new Intent();
+                intent.setAction(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT,mTvContent.getText().toString());
+                intent.setType("text/plain");
+                startActivity(Intent.createChooser(intent,"选择分享应用"));
 
 
             }
@@ -72,10 +77,15 @@ public class ShowFragment extends Fragment implements MultiItemsAdapter.OnItemCl
         btGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setPackage(Path.pkgName);
-                intent.setData(mBuilder.build());
-                startActivity(intent);
+                try {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setPackage(Path.pkgName);
+                    intent.setData(mBuilder.build());
+                    startActivity(intent);
+                } catch (android.content.ActivityNotFoundException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getContext(),"你还没有安装此应用",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -101,7 +111,7 @@ public class ShowFragment extends Fragment implements MultiItemsAdapter.OnItemCl
 
     private void initView() {
         btGo = mView.findViewById(R.id.bt_go);
-        btUpte = mView.findViewById(R.id.bt_update);
+        btShare = mView.findViewById(R.id.bt_update);
         mTvContent = mView.findViewById(R.id.text_detial_one);
         mTvTittle = mView.findViewById(R.id.text_tittle);
         mTvTittle.setText("-" + mTittle + "-");
